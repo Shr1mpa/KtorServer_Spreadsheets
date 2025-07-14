@@ -1,5 +1,6 @@
 package com.example.di
 
+import com.example.controller.TableController
 import com.example.repository.TableRepository
 import com.example.repository.impl.FileTableRepository
 import com.example.usecase.LoadTableUseCase
@@ -14,4 +15,6 @@ val appModule = module {
 
     single { SaveTableUseCase(get()) }
     single { LoadTableUseCase(get()) }
+
+    single { TableController(get(), get()) }
 }
